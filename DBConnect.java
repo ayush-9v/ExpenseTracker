@@ -1,0 +1,20 @@
+package com.expense.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBConnect {
+    private static Connection conn = null;
+
+    public static Connection getConnection() {
+        try {
+            if (conn == null || conn.isClosed()) {
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+                conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "dbms123");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return conn;
+    }
+}
