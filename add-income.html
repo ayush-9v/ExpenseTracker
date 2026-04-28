@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Income</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color:#3258a8;">
+<nav>
+    <a href="ViewExpenseServlet">Dashboard</a>
+    <a href="add-expense.html">Add Expense</a>
+    <a href="add-income.html">Add Income</a>
+    <a href="about.html">About</a>
+</nav>
+<div class="container">
+    <h2>Add New Income</h2>
+    <form action="AddIncomeServlet" method="POST">
+        <div class="form-group">
+            <label>Serial Number (S.No)</label>
+            <input type="number" name="sno" required placeholder="e.g., 1">
+        </div>
+        <div class="form-group">
+            <label>Income Source</label>
+            <select name="source" required>
+                <option value="salary">salary</option>
+                <option value="shares">shares</option>
+                <option value="freeLancing">freeLancing</option>
+                <option value="business">business</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" name="inc_date" required>
+        </div>
+        <div class="form-group">
+            <label>Amount (Rs)</label>
+            <input type="number" step="0.01" name="amount" required placeholder="0.00">
+        </div>
+        <button type="submit">Save Income</button>
+    </form>
+</div>
+</body>
+</html>
